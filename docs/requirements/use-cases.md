@@ -960,7 +960,9 @@ Details:
 - Each list entry shows the student's name, her team, and the time of any reminder already sent to her for that item and week.
 - Each list is shown together with how many students it was evaluated against, so "no non-submitters" is distinguishable from "no eligible students."
 
-Reminder content: the student's first name, the course section name, the item that is outstanding (weekly activity report for week W, or peer evaluation of week W−1), and its due day and due time from the course section's configuration. A student selected for both items receives one email listing both.
+Reminder content: the student's first name, the course section name, the item that is outstanding (weekly activity report for week W, or peer evaluation of week W−1), and its due day and due time from the course section's configuration. A student selected for both items receives one email that lists only the items still outstanding after the step 8 re-check; if neither is still outstanding, no email is sent. A due day or due time that is not configured is left out of the email.
+
+Counts in step 8: sent, skipped, and failed are counted per reminder (one student and one item), not per email. A single email covering both items therefore counts as two reminders sent, or two failed if the mail server rejects it.
 
 Privacy: each reminder email is addressed to one student only and contains no other student's name, address, or submission status. The non-submitter lists are visible only to instructors of the course section (BR-section-scoped-access).
 
